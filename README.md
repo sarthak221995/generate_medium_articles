@@ -52,27 +52,6 @@ You will also need a **Serper.dev API key**.
 
 ---
 
-## 🚀 Installation
-
-```bash
-# 1. Clone the repository
-git clone https://github.com/your-username/generate_medium_article_mcp.git
-cd generate_medium_article_mcp
-
-# 2. (Optional) Set up a virtual environment
-python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
-
-# 3. Install dependencies
-pip install -r requirements.txt
-
-🧪 Usage
-bash
-Copy
-Edit
-python main.py
-This launches the MCP server on stdio transport. You can now integrate it with any MCP-compatible client or orchestrator.
-
 🛠️ Exposed Tools
 🔍 get_top_search_results(topic, limit=5)
 Fetches top organic Google results via Serper.dev.
@@ -87,15 +66,7 @@ Query format: site:x.com <topic>
 🧵 get_top_reddit_posts(topic, limit=5)
 Finds Reddit discussions using site:reddit.com via Serper.dev.
 
-🧱 Project Structure
-graphql
-Copy
-Edit
-.
-├── main.py               # MCP server implementation
-├── utils.py              # Helper for API key retrieval
-├── .env                  # Secret API key config
-└── README.md             # This file
+
 ✨ Claude Prompt Template (Sample)
 I need you to generate a comprehensive, SEO-friendly Medium article based on a given topic [TOPIC]. You will act as a multi-agent orchestrator using a chain-of-thought approach. Here’s how you should proceed:
 1. **Article Structure and Planning (Structure Agent)**
@@ -126,11 +97,5 @@ I need you to generate a comprehensive, SEO-friendly Medium article based on a g
      - Verify that the tone is consistent and that the article reads naturally.
      - Add any final SEO meta-text (e.g., HTML comments with SEO guidelines) at the end.
    
-Please show your complete reasoning along the way, listing which tools you are calling and how each piece of data (search results, tweet snippets, Reddit excerpts) is being used to build each section. Finally, output the complete Medium article in Markdown format.
-**Topic/Title:** "[Insert the Article Title Here]"
-Begin by outlining your plan and then proceed step by step. Each intermediate reasoning step is welcome. Use available tools (search, tweet, and Reddit queries) as necessary to inform your final article.
-
 📄 License
 MIT License © 2025
-
-Made for orchestrated, intelligent article creation using agents + MCP + Serper.dev.
